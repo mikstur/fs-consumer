@@ -1,9 +1,43 @@
 <ion-header>
   <ion-toolbar>
     <ion-title>
-      Tab Three
+      {{currentUser.firstname}}
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content></ion-content>
+<ion-content>
+
+  <div *ngIf="loggedIn">
+    Logout...
+  </div>
+
+  <div *ngIf="!currentUser">
+    Nope
+  </div>
+
+  <ion-list>
+
+    <!-- <ion-item>Listing 1</ion-item>
+
+    <ion-item>Listing 2</ion-item>
+
+    <ion-item>Listing 3</ion-item> -->
+
+    <ion-item *ngFor="let transaction of transactions">
+      {{transaction}}
+    </ion-item>
+
+  </ion-list>
+
+  Users
+
+  <ion-list>
+
+    <ion-item *ngFor="let user of users">
+      {{user.firstname}} {{user.lastname}}
+    </ion-item>
+
+  </ion-list>
+
+</ion-content>
